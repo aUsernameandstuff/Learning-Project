@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1432,7 +1432,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00009739399, y: -0.027973741}
+  m_Offset: {x: 0.00009739399, y: -0.06931174}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1443,7 +1443,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.000194, y: 0.9440525}
+  m_Size: {x: 1.000194, y: 0.8613765}
   m_EdgeRadius: 0
 --- !u!1 &657037879
 GameObject:
@@ -2903,7 +2903,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2922,7 +2922,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015004657, y: -0.050309762}
+  m_Offset: {x: -0.015004657, y: -0.052356496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2933,7 +2933,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17995335, y: 0.21938047}
+  m_Size: {x: 0.17995335, y: 0.22347394}
   m_EdgeRadius: 0
 --- !u!114 &1543930099
 MonoBehaviour:
@@ -2962,11 +2962,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterrigidbody: {fileID: 1543930097}
   playerAnimatorController: {fileID: 1543930099}
-  Speed: 3.75
-  JumpValue: 0
-  JumpHeight: 0.5
-  heightToAttain: 3
+  Speed: 100
+  JumpValue: 150
+  JumpHeight: 2
+  heightToAttain: 0
   isJumping: 0
+  canJump: 1
 --- !u!114 &1543930101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2974,16 +2975,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543930093}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1db85f87a11c5ff41ab3a2713b599161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
-  groundCheckRadius: 0.2
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  playerAnimatorController: {fileID: 1543930099}
+  JumpForce: 100
+  JumpHeight: 3
+  heightToAttain: 0
+  canPlayerJumping: 1
+  rb: {fileID: 1543930097}
 --- !u!1 &1545932124
 GameObject:
   m_ObjectHideFlags: 0

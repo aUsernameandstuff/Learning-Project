@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public float heightToAttain;
     public bool isJumping;
 
+    public bool canJump = true;
+    
     private void Start()
     {
         characterrigidbody ??= GetComponent<Rigidbody2D>();
@@ -26,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     // v = s/t
 
-    private void Update()
+    private void FixedUpdate()
     {
         float xInput = Input.GetAxis("Horizontal");
 
@@ -35,18 +37,27 @@ public class PlayerController : MonoBehaviour
 
         playerAnimatorController.SetSpeed(Mathf.Abs(speed));
 
-        if (isJumping)
+        if (!canJump)
+            return;
+        
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            heightToAttain = transform.position.y + JumpHeight;
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Debug.LogError("Jump");
             characterrigidbody.velocity += Vector2.up.normalized * JumpValue * Time.deltaTime;
+            playerAnimatorController.SetArielSpeed(1f);
+            playerAnimatorController.SetGrounded(false);
+
             CheckJumpHeight();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
-            if (!isJumping)
-            {
-                CharacterJump();
-            }
+            playerAnimatorController.SetArielSpeed(-1f);
         }
     }
 
@@ -64,6 +75,7 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
             playerAnimatorController.SetArielSpeed(-1f);
+            canJump = false;
         }
     }
 
@@ -72,6 +84,8 @@ public class PlayerController : MonoBehaviour
         if (col.transform.CompareTag("Ground"))
         {
             playerAnimatorController.SetGrounded(true);
+            playerAnimatorController.SetArielSpeed(0f);
+            canJump = true;
         }
     }
 }
