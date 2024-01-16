@@ -1,12 +1,17 @@
 using UnityEngine;
 
 public class Jump : MonoBehaviour
-{
-    public float jumpForce = 10.0f;
-    public float groundCheckRadius = 0.2f;
-    public LayerMask groundLayer;
+{   
+    public PlayerAnimatorController playerAnimatorController;
+    
+    public float JumpForce;
+    public float JumpHeight = 0.5f;
+    public float heightToAttain;
+    
+    public bool canPlayerJumping = true;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
+    
     private bool isGrounded;
 
     void Start()
@@ -14,20 +19,49 @@ public class Jump : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        // Check if the character is grounded.
-        //isGrounded = Physics.CheckSphere(transform.position, groundCheckRadius, groundLayer);
-
-        // Handle jumping when the player presses a key (e.g., Spacebar).
-        if (Input.GetButtonDown("Jump"))
+        if (!canPlayerJumping)
+            return;
+        
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            jump();
+            heightToAttain = transform.position.y + JumpHeight;
+        }
+        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Debug.LogError("Jump");
+            rb.velocity += Vector2.up.normalized * JumpForce * Time.deltaTime;
+            playerAnimatorController.SetArielSpeed(1f);
+            playerAnimatorController.SetGrounded(false);
+            
+            CheckJumpHeight();
         }
     }
 
-    public void jump()
+    private void CharacterJump()
     {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+        playerAnimatorController.SetGrounded(false);
+        playerAnimatorController.SetArielSpeed(1f);
+    }
+
+    private void CheckJumpHeight()
+    {
+        if (transform.position.y >= heightToAttain)
+        {
+            canPlayerJumping = false;
+            playerAnimatorController.SetArielSpeed(-1f);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.transform.CompareTag("Ground"))
+        {
+            playerAnimatorController.SetGrounded(true);
+            playerAnimatorController.SetArielSpeed(0f);
+            canPlayerJumping = true;
+        }
     }
 }
