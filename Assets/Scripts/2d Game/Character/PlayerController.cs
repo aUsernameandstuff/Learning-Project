@@ -30,21 +30,26 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float xInput = Input.GetAxis("Horizontal");
-
-        float speed = xInput * Speed;
-        characterrigidbody.velocity = Vector2.right * speed * Time.deltaTime;
-
-        playerAnimatorController.SetSpeed(Mathf.Abs(speed));
+        PlayerMovement();
 
         if (!canJump)
             return;
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            heightToAttain = transform.position.y + JumpHeight;
-        }
 
+        CalculateJumpHeight();
+        JumpInput();
+        LeftJumpInput();
+    }
+
+    private void LeftJumpInput()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            playerAnimatorController.SetArielSpeed(-1f);
+        }
+    }
+    
+    private void JumpInput()
+    {
         if (Input.GetKey(KeyCode.Space))
         {
             Debug.LogError("Jump");
@@ -54,11 +59,23 @@ public class PlayerController : MonoBehaviour
 
             CheckJumpHeight();
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
+    }
+    
+    private void CalculateJumpHeight()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerAnimatorController.SetArielSpeed(-1f);
+            heightToAttain = transform.position.y + JumpHeight;
         }
+    }
+
+    private void PlayerMovement()
+    {
+        float xInput = Input.GetAxis("Horizontal");
+        float speed = xInput * Speed;
+
+        characterrigidbody.velocity = Vector2.right * speed * Time.deltaTime;
+        playerAnimatorController.SetSpeed(Mathf.Abs(speed));
     }
 
     private void CharacterJump()
