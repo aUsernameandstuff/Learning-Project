@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D characterrigidbody;
     public PlayerAnimatorController playerAnimatorController;
 
+    public LayerMask groundLayers;
+    public float CheckGroundDistance = 1.5f;
+    
     public float Speed = 15;
     public float JumpValue;
 
@@ -15,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public float heightToAttain;
     public bool isJumping;
+    public bool isGrounded = true;
 
     public bool canJump = true;
     
@@ -26,10 +30,16 @@ public class PlayerController : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(transform.position, -transform.up * CheckGroundDistance);
+    }
+
     // v = s/t
 
     private void FixedUpdate()
     {
+        CheckIfPlayerIsGrounded();
         PlayerMovement();
 
         if (!canJump)
@@ -37,26 +47,38 @@ public class PlayerController : MonoBehaviour
 
         CalculateJumpHeight();
         JumpInput();
-        LeftJumpInput();
     }
 
-    private void LeftJumpInput()
+    private void CheckIfPlayerIsGrounded()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Physics2D.Raycast(transform.position, -transform.up, CheckGroundDistance, groundLayers))
         {
-            playerAnimatorController.SetArielSpeed(-1f);
+            isGrounded = true;
+            playerAnimatorController.SetArielSpeed(0f);
         }
+        else
+        {
+            isGrounded = false;
+
+            if (characterrigidbody.velocity.y > 0)
+            {
+                playerAnimatorController.SetArielSpeed(-1f);   
+            }
+            else
+            {
+                playerAnimatorController.SetArielSpeed(1f);
+            }
+        }
+        
+        playerAnimatorController.SetGrounded(isGrounded);
     }
-    
+
     private void JumpInput()
     {
         if (Input.GetKey(KeyCode.Space))
         {
             Debug.LogError("Jump");
             characterrigidbody.velocity += Vector2.up.normalized * JumpValue * Time.deltaTime;
-            playerAnimatorController.SetArielSpeed(1f);
-            playerAnimatorController.SetGrounded(false);
-
             CheckJumpHeight();
         }
     }
@@ -82,8 +104,6 @@ public class PlayerController : MonoBehaviour
     {
         heightToAttain = transform.position.y + JumpHeight;
         isJumping = true;
-        playerAnimatorController.SetArielSpeed(1f);
-        playerAnimatorController.SetGrounded(false);
     }
 
     private void CheckJumpHeight()
@@ -91,7 +111,6 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y >= heightToAttain)
         {
             isJumping = false;
-            playerAnimatorController.SetArielSpeed(-1f);
             canJump = false;
         }
     }
@@ -100,8 +119,6 @@ public class PlayerController : MonoBehaviour
     {
         if (col.transform.CompareTag("Ground"))
         {
-            playerAnimatorController.SetGrounded(true);
-            playerAnimatorController.SetArielSpeed(0f);
             canJump = true;
         }
     }

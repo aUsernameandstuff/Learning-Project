@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 49279683}
   - component: {fileID: 49279684}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 179811639}
   - component: {fileID: 179811640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 212180709}
   - component: {fileID: 212180710}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 323599289}
   - component: {fileID: 323599290}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 329129656}
   - component: {fileID: 329129657}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,7 +777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 367687797}
   - component: {fileID: 367687798}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,7 +861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 397946762}
   - component: {fileID: 397946763}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,7 +1134,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &498045728
 SpriteRenderer:
@@ -1224,7 +1224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 553353680}
   - component: {fileID: 553353681}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1345,7 +1345,7 @@ GameObject:
   - component: {fileID: 600994018}
   - component: {fileID: 600994017}
   - component: {fileID: 600994019}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1417,7 +1417,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1586063348}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &600994019
 BoxCollider2D:
@@ -1829,7 +1829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 752813725}
   - component: {fileID: 752813726}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1997,7 +1997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 859525510}
   - component: {fileID: 859525511}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2081,7 +2081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1073821868}
   - component: {fileID: 1073821869}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2249,7 +2249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1168653244}
   - component: {fileID: 1168653245}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2516,7 +2516,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1450762081
 GameObject:
@@ -2573,7 +2573,7 @@ GameObject:
   - component: {fileID: 1474826024}
   - component: {fileID: 1474826023}
   - component: {fileID: 1474826022}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: platform-long (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2671,7 +2671,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1586063348}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1513778131
 GameObject:
@@ -2756,7 +2756,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1513778134
 Animator:
@@ -2962,11 +2962,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterrigidbody: {fileID: 1543930097}
   playerAnimatorController: {fileID: 1543930099}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  CheckGroundDistance: 0.3
   Speed: 100
   JumpValue: 150
   JumpHeight: 2
   heightToAttain: 0
   isJumping: 0
+  isGrounded: 1
   canJump: 1
 --- !u!114 &1543930101
 MonoBehaviour:
@@ -2996,7 +3001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1545932125}
   - component: {fileID: 1545932126}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3163,7 +3168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586063348}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FLOOR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3182,6 +3187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1695236525}
   - {fileID: 1590246716}
   - {fileID: 1474826024}
   - {fileID: 1624394139}
@@ -3201,7 +3207,7 @@ GameObject:
   - component: {fileID: 1590246716}
   - component: {fileID: 1590246715}
   - component: {fileID: 1590246714}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: platform-long
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3299,7 +3305,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1586063348}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1592896966
 GameObject:
@@ -3311,7 +3317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1592896967}
   - component: {fileID: 1592896968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3395,7 +3401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1600755539}
   - component: {fileID: 1600755540}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3479,7 +3485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1610671192}
   - component: {fileID: 1610671193}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3563,7 +3569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615903958}
   - component: {fileID: 1615903959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3648,7 +3654,7 @@ GameObject:
   - component: {fileID: 1624394139}
   - component: {fileID: 1624394138}
   - component: {fileID: 1624394137}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: platform-long (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3746,7 +3752,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1586063348}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1632749688
 GameObject:
@@ -3900,7 +3906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1666946221}
   - component: {fileID: 1666946222}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3983,7 +3989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1695236525}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3998,7 +4004,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695236524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.27, y: -0.93, z: 0.747}
+  m_LocalPosition: {x: 4.920101, y: 8.079452, z: -57.568756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4026,8 +4032,8 @@ Transform:
   - {fileID: 1666946221}
   - {fileID: 1868166421}
   - {fileID: 2124116181}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1586063348}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1718924940
 GameObject:
@@ -4206,7 +4212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752100442}
   - component: {fileID: 1752100443}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4374,7 +4380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1806774601}
   - component: {fileID: 1806774602}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4626,7 +4632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1868166421}
   - component: {fileID: 1868166420}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4827,7 +4833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1959958458}
   - component: {fileID: 1959958457}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4899,7 +4905,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1586063348}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991960344
 GameObject:
@@ -4955,7 +4961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2022558644}
   - component: {fileID: 2022558645}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5039,7 +5045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058802341}
   - component: {fileID: 2058802342}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spikes (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5306,7 +5312,7 @@ GameObject:
   - component: {fileID: 2124116181}
   - component: {fileID: 2124116183}
   - component: {fileID: 2124116182}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
