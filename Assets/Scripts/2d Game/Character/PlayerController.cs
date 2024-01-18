@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask groundLayers;
     public float CheckGroundDistance = 1.5f;
-    
+    public float Sprint = 0;
     public float Speed = 15;
     public float JumpValue;
 
@@ -40,7 +40,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         CheckIfPlayerIsGrounded();
+        SprintInput();
         PlayerMovement();
+        
 
         if (!canJump)
             return;
@@ -73,6 +75,21 @@ public class PlayerController : MonoBehaviour
         playerAnimatorController.SetGrounded(isGrounded);
     }
 
+   private void SprintInput()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Sprint = 1 * Input.GetAxis("Horizontal");
+        }
+        else
+        {
+            Sprint = 0;
+        }
+    }
+    
+        
+    
+
     private void JumpInput()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -94,7 +111,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerMovement()
     {
         float xInput = Input.GetAxis("Horizontal");
-        float speed = xInput * Speed;
+        float speed = xInput * Speed + Sprint;
 
         characterrigidbody.velocity = Vector2.right * speed * Time.deltaTime;
         playerAnimatorController.SetSpeed(Mathf.Abs(speed));
