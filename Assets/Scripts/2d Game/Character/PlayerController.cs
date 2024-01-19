@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public float heightToAttain;
     public bool isJumping;
     public bool isGrounded = true;
-
+    public bool CheckSprint = false;
     public bool canJump = true;
     
     private void Start()
@@ -77,17 +77,19 @@ public class PlayerController : MonoBehaviour
 
    private void SprintInput()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            Sprint = 1 * Input.GetAxis("Horizontal");
+            Sprint = 80 * Input.GetAxis("Horizontal");
+            CheckSprint = true;
         }
         else
         {
             Sprint = 0;
+            CheckSprint = false;
         }
     }
     
-        
+    
     
 
     private void JumpInput()
