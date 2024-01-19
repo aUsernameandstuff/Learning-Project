@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
         SprintInput();
         PlayerMovement();
         
-
         if (!canJump)
             return;
 
@@ -88,10 +87,7 @@ public class PlayerController : MonoBehaviour
             CheckSprint = false;
         }
     }
-    
-    
-    
-
+   
     private void JumpInput()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -140,5 +136,15 @@ public class PlayerController : MonoBehaviour
         {
             canJump = true;
         }
+
+        if (col.transform.GetComponent<SpikeFloor>())
+        {
+            PlayerDie();
+        }
+    }
+
+    private void PlayerDie()
+    {
+        Debug.LogError("Player Die Method");
     }
 }
